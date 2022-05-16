@@ -28,7 +28,9 @@ def student(req):
 
 def projects(req):
     projects = Projects.objects.all()
-    return render(req, "projects.html", {'projects':projects})
+    proj_list = preprocessing_completed_project_data()
+    context = {'projects':projects, 'completed_projects': proj_list}
+    return render(req, "projects.html", context)
 
 def area(req):
     return render(req, "area.html")

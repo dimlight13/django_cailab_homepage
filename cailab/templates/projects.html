@@ -97,8 +97,26 @@
     .project-container{
         width: 60%;
     }
+
+    .com-container{
+            margin-left: 15%;
+    }
+
     @media screen and (max-width: 1400px) {
         .project-container{
+            width: 90%;
+        }
+    }
+
+    @media screen and (max-width: 1400px){
+        .com-container{
+            margin-left: 15pt;
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        .com-container{
+            margin-left: 0pt;
             width: 90%;
         }
     }
@@ -115,7 +133,10 @@
 
     <!-- main -->
     <div>
-        <article style="margin-top: 100px;">
+        <article style="margin-top: 80px;">
+            <div class="text-content center p-5">
+                <h2 style="margin-left: 15%; margin-bottom: 25px; font-weight: bold;">On-going Research Projects</h3>
+            </div>
             {% if projects %}            
             <div class="project-container row mb-3" style="word-break: break-all; margin: 0 auto;">
             {% for project in projects %}
@@ -137,6 +158,18 @@
                     </div>
                 </div>
             {% endfor%}
+            </div>
+            <div class="completed-projects">
+                <div class="text-content center p-5">
+                    <h2 style="margin-left: 15%; margin-bottom: 15px; font-weight: bold;">Completed Research Projects</h3>
+                        <div class="com-container" style="margin-top: 2%;">
+                            {% for proj in completed_projects %}
+                            <ul style="margin-bottom: 5pt;">
+                                {{proj}}
+                            </ul>
+                            {% endfor %}
+                        </div>
+                </div>
             </div>
             {% endif %}
         </article>
