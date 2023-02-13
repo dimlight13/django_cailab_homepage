@@ -13,10 +13,6 @@
 | [django-jazzmin](https://django-jazzmin.readthedocs.io/)                           | 2.6.0   | django admin adminlte3 theme                                                         |
 | [django-admin-ip-restrictor](https://pypi.org/project/django-admin-ip-restrictor/) | 2.2.0   | A Django middleware to restrict the access to the Django admin based on incoming IPs |
 
-## Installation
-
-- 작동을 위해 NAS에서 `data`, `meida`, `db.sqlite3`를 이 프로젝트 폴더로 다운받으세요.
-
 ## Command
 
 - default setting
