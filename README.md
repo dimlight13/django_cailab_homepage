@@ -41,35 +41,3 @@ python manage.py migrate
 ```shell
 python manage.py collectstatic
 ```
-
-## Todo
-
-- [x] [upload multi image](https://soshace.com/upload-multiple-images-to-a-django-model-without-plugins/)
-- [x] [news template group by year](https://stackoverflow.com/questions/8678336/django-grouping-querysets-by-a-certain-field-in-template)
-- [x] dockerizing
-- [x] CI/CI: Docker deployment automation
-
-### Refactoring
-
-- [x] Bootstrap file -> cdn
-
-#### DB화
-
-> 빈번하게 업데이트가 발생하는 데이터에 대해서 DB화를 통해 관리를 용이하게 하기 위함
-
-- [x] news
-- [ ] alumini
-- [ ] main
-- [ ] publications
-
-#### 중복 제거
-
-> 유지보수 용이하게 하기 위함
-
-- [ ] common: html header
-- [ ] area: 동일한 css class화
-
-#### Error
-
-- [x] Research/Project: CSS 레이아웃 다름
-- [x] Research/Project: dropdown 작동하지 않는 문제
