@@ -1,0 +1,55 @@
+@import "_variables.scss";
+
+main{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    article{
+        margin-top: 150px;
+    }
+    .screen{
+        .event-description{
+            font-size: 14pt;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        text-align: center;
+        display: inline-block;
+        margin: 15px;
+    }
+}
+
+@media screen and (max-width: 1060px) {
+main{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    article{
+        width: 100%;
+        margin-top: 50px;
+        .event-container{
+            display: block;
+            .student-container{
+                margin-top: 50px;
+                .screen{
+                    text-align: center;
+                    display: block;
+                    margin: 15px;
+                    img{
+                        width: 20rem;
+                        height: auto;
+                        margin-bottom: 50px;
+                    }
+                    .event-description{
+                        font-size: 14pt;
+                        margin-bottom: 10px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+}

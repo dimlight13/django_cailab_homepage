@@ -2,7 +2,8 @@
 
 {% block link %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'src/scss/bio_detail.css' %}" />
+{% load sass_tags %}
+<link rel="stylesheet" href="{% sass_src 'src/scss/bio_detail.scss' %}" />
 {% endblock %}
 
 {% block header %}
@@ -27,7 +28,7 @@
                 </ul>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">People</a>
+                <a class="nav-link dropdown-toggle active" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">People</a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown05">
                   <li><a class="dropdown-item" href="{% url 'professor' %}">Professor</a></li>
                   <li><a class="dropdown-item" href="{% url 'student' %}">student</a></li>
@@ -41,7 +42,7 @@
                   <a class="nav-link" href="{% url 'news' %}">news</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link active" href="{% url 'library' %}">Board</a>
+                  <a class="nav-link" href="{% url 'library' %}">Board</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>

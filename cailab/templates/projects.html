@@ -2,9 +2,8 @@
 
 {% block link %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'src/scss/publications.css' %}" />
-<link rel="stylesheet" href="{% static 'src/assets/dist/css/bootstrap.min.css' %}"/>
-<script src="{%static 'src/assets/dist/js/bootstrap.min.js'%}"></script>
+{% load sass_tags %}
+<link rel="stylesheet" href="{% sass_src 'src/scss/projects.scss' %}" />
 {% endblock %}
 
 {% block header %}
@@ -57,53 +56,6 @@
 
 {% block body %}
 
-<style>
-    .inner{
-        overflow: hidden;
-    }
-
-    .project-img{
-        transition: all 0.5s ease;
-    }
-    .project-img:hover{
-        transform: scale(1.5);
-    }
-
-    .card-title{
-        font-weight: 600;
-    }
-
-    .main-container{
-        margin-top: 100px;
-    }
-    .card-body{
-        box-shadow: 0 0 10px 4px rgba(0,0,0,0.1);
-    }
-
-    .card-body a{
-        color: #0d3238;
-        text-decoration: none;
-        font-size: 1rem;
-        margin-top: auto;
-        font-weight: 600;
-        transition: 0.3s;
-    }
-
-    .card-body a:hover{
-        color:#63a6b0;
-        text-decoration: underline;
-    }
-
-    .project-container{
-        width: 60%;
-    }
-    @media screen and (max-width: 1400px) {
-        .project-container{
-            width: 90%;
-        }
-    }
-
-</style>
     <!-- head summary -->
     <div id="head">
         <div class="bg">
@@ -115,21 +67,24 @@
 
     <!-- main -->
     <div>
-        <article style="margin-top: 100px;">
+        <article style="margin-top: 80px;">
+            <div class="text-content center p-5">
+                <h2>On-going Research Projects</h2>
+            </div>
             {% if projects %}            
-            <div class="project-container row mb-3" style="word-break: break-all; margin: 0 auto;">
+            <div class="project-container row mb-3">
             {% for project in projects %}
                 <div class="col-md-4" style="margin-bottom: 50px;">
                     <div class="card-text-center">
                         <div class="inner">
-                            <a href="{{ project.get_absolute_url }}" class="project-img"  style="height: 12rem; width: 100%; display: block;">
-                                <img src="{{project.images.url}}" class="card-img-top" style="height: 12rem;">
+                            <a href="{{ project.get_absolute_url }}" class="project-img">
+                                <img src="{{project.images.url}}" class="card-img-top">
                             </a>
                         </div>
 
                         <div class="card-body">
                             <a class="title-container" href="{{ project.get_absolute_url }}">
-                                <h5 class="card-title"">{{project.title}}</h5>
+                                <h5 class="card-title">{{project.title}}</h5>
                             </a>
                             <br>
                             <small class="project-date">{{project.project_strat_date}}~{{project.project_end_date}}|{{project.support_institue}}</small>
@@ -137,6 +92,18 @@
                     </div>
                 </div>
             {% endfor%}
+            </div>
+            <div class="completed-projects">
+                <div class="text-content center p-5">
+                    <h2>Completed Research Projects</h3>
+                        <div class="com-container">
+                            {% for proj in completed_projects %}
+                            <ul style="margin-bottom: 5pt;">
+                                {{proj}}
+                            </ul>
+                            {% endfor %}
+                        </div>
+                </div>
             </div>
             {% endif %}
         </article>

@@ -2,7 +2,8 @@
 
 {% block link %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'src/scss/bio_detail.css' %}" />
+{% load sass_tags %}
+<link rel="stylesheet" href="{% sass_src 'src/scss/bio_detail.scss' %}" />
 {% endblock %}
 
 

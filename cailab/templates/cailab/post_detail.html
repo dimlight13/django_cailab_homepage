@@ -2,7 +2,8 @@
 
 {% block link %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'src/scss/library.css' %}" />
+{% load sass_tags %}
+<link rel="stylesheet" href="{% sass_src 'src/scss/library.scss' %}" />
 {% endblock %}
 
 {% block header %}
@@ -119,7 +120,7 @@
                     {% endfor %}
                     {% else %}
                     <tr>
-                        <td colspan="3">질문이 없습니다. </td>
+                        <td colspan="3">공지사항이 없습니다. </td>
                     </tr>
                     {% endif %}
                 </tbody>
@@ -149,7 +150,7 @@
                         {% endfor %}
                         {% else %}
                         <tr>
-                            <td colspan="3">질문이 없습니다. </td>
+                            <td colspan="3">공지사항이 없습니다. </td>
                         </tr>
                         {% endif %}
 

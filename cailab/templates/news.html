@@ -2,7 +2,8 @@
 
 {% block link %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'src/scss/news.css' %}" />
+{% load sass_tags %}
+<link rel="stylesheet" href="{% sass_src 'src/scss/news.scss' %}" />
 {% endblock %}
 
 {% block header %}
@@ -68,28 +69,27 @@
     <main class="main-container">
         <article class="news-container">
           <div class="event-container">
+          {% regroup news|dictsortreversed:"year" by year as news_by_year %}
+          {% for year in news_by_year %}
           <div class="year-column col-lg-4">
-            <h3>2021</h3>
+            <h3>{{year.grouper}}</h3>
           </div>
           <hr>
-          <div class="student-container">
+          <div class="student-container" style="margin-bottom: 2rem;">
+            {%for article in year.list %}
             <div class="screen">
-              <div class="event-description">교수님 생신 (February 23, 2021)</div>
-              <img class="bd-placeholder-img" width="Automatically" height="240" src="{% static 'images/news/professor_birthday(2021).jpg' %}" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+              <div class="event-description">{{article.title}} ({{article.date}})</div>
+              {%for photo in photos%}
+              {% if photo.news_id == article.id %}
+              <img class="bd-placeholder-img" width="Automatically" height="240" src="{{photo.images.url}}"
+                aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+              {% endif %}
+              {%endfor%}
             </div>
-              <div class="screen">
-                <div class="event-description">졸업식 (August 24, 2021)</div>
-                <img class="bd-placeholder-img" width="Automatically" height="240" src="{% static 'images/news/graduation(2021).jpg' %}" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
-              </div>
-              <div class="screen">
-                <div class="event-description">생일 (November 13, 2021)</div>
-                <img class="bd-placeholder-img" width="Automatically" height="240" src="{% static 'images/news/birthday(2021).jpg' %}" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
-              </div>
-              <div class="screen">
-                <div class="event-description">학술대회 시상식 참여 (November 13, 2021)</div>
-                <img class="bd-placeholder-img" width="Automatically" height="240" src="{% static 'images/news/conference(2021).jpg' %}" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
-              </div>
+            {% endfor %}
           </div>
+          {% endfor %}
           </div>
         </article>
     </main>
