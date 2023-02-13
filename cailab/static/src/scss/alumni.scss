@@ -1,0 +1,57 @@
+@import "_variables.scss";
+
+.main-container{
+    width: 60%;
+    margin: auto;
+    .phd-list-container{
+        margin-top: 150px;
+        div{
+            hr{
+                color: rgb(170, 157, 157);
+            }
+        }
+    }
+    .master-list-container{
+        margin-top: 50px;
+        div{
+            hr{
+                color: rgb(170, 157, 157);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1060px) {
+.main-container{
+    width: 80%;
+    .phd-list-container{
+        margin-top: 50px;
+    }
+    .master-list-container{
+        margin-top: 10px;
+        div{
+            hr{
+                color: rgb(170, 157, 157);
+            }
+        }
+    }
+}
+}
+
+
+@media screen and (max-width: 767px){
+    .main-container{
+        width: 95%;
+        .phd-list-container{
+            margin-top: 30px;
+        }
+        .master-list-container{
+            margin-top: 10px;
+            div{
+                hr{
+                    color: rgb(170, 157, 157);
+                }
+            }
+        }
+    }
+}

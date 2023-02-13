@@ -2,7 +2,8 @@
 
 {% block link %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'src/scss/publications.css' %}" />
+{% load sass_tags %}
+<link rel="stylesheet" href="{% sass_src 'src/scss/publications.scss' %}" />
 {% endblock %}
 
 {% block header %}
@@ -66,7 +67,7 @@
     <main class="main-container">
       <section>
         <div class="publication-list-container">
-          <h3 class="SCI-title">International Journals (SCI)
+          <h3 class="SCI-title">International Journals (SCI: Science Citations Index listed by JCR)
             <hr>
           </h3>
           {% for pub in data %}
@@ -80,7 +81,7 @@
       </section>
       <section>
         <div class="publication-list-container">
-          <h3 class="KCI-title" style="margin-bottom: 50px;">Korean Journals (KCI)
+          <h3 class="KCI-title">Korean Journals (KCI: Korean Citations Index listed by National Research Foundations)
             <hr>
           </h3>
           {% for kci_pub in kci_data %}

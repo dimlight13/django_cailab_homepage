@@ -1,0 +1,61 @@
+@import "_variables.scss";
+
+.main-container{
+    width: 70%;
+    margin: auto;
+
+    article{
+        margin-top: 150px;
+        width: 100%;
+        .section-title-container{
+            margin-bottom: 75px;
+            .section-title{
+                font-size: 24pt;
+                text-align: center;
+                font-weight: 600;
+            }
+        }
+
+        .row{
+            .student-container{
+                text-align: center;
+                margin-bottom: 50px;
+                .detail-top{
+                    margin-top: 20px;
+                }
+                .student-detail{
+                    width: 70%;
+                    margin: auto;
+                    border-top: 1px ridge;
+                    border-color: #ccc;
+                    text-align: left;
+                    padding-left: 20px;
+                    p{
+                        margin-top: 10px;
+                        margin-bottom: 0;
+                        font-size: 12pt;
+                        font-weight: 600;
+                    }
+                    li{
+                        margin-top: 10px;
+                        font-size: 10pt;
+                    }
+
+                }
+                .link{
+                    margin: auto;
+                    padding-top: 10px;
+                    width: 50%;
+                    text-align: left;
+                    a{
+                        color: black;
+                        transition: .5s;
+                    }
+                    a:hover{
+                        color: rgb(63, 63, 146);
+                    }
+                }
+            }
+        }
+    }
+}
